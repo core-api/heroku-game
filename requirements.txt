@@ -6,4 +6,4 @@ gunicorn==19.3.0
 psycopg2==2.6
 static3==0.5.1
 djangorestframework==3.3.2
-coreapi==0.6.1
+coreapi==0.6.2
