@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '8!4rir#%ce$0&v7-l4j%hqtzg5o2$ih#3$p$m(+h6itpovmywg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -31,10 +31,12 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = (
     'project.game',
-    'rest_framework'
+    'rest_framework',
+    'opbeat.contrib.django',
 )
 
 MIDDLEWARE_CLASSES = (
+    'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
     'django.middleware.common.CommonMiddleware',
 )
 
@@ -86,4 +88,10 @@ REST_FRAMEWORK = {
     ],
     'EXCEPTION_HANDLER': 'project.game.exceptions.custom_exception_handler',
     'UNAUTHENTICATED_USER': None
+}
+
+OPBEAT = {
+    'ORGANIZATION_ID': 'a90a815ce7ea407f84b2b9a9ed8378c5',
+    'APP_ID': '957af31684',
+    'SECRET_TOKEN': '8fed442cacf0dc04a8c333a341bff0c846573b71',
 }
