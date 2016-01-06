@@ -17,7 +17,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8!4rir#%ce$0&v7-l4j%hqtzg5o2$ih#3$p$m(+h6itpovmywg'
+SECRET_KEY = os.environ.get('SECRET_KEY', '1234567890')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -93,5 +94,5 @@ REST_FRAMEWORK = {
 OPBEAT = {
     'ORGANIZATION_ID': 'a90a815ce7ea407f84b2b9a9ed8378c5',
     'APP_ID': '957af31684',
-    'SECRET_TOKEN': '8fed442cacf0dc04a8c333a341bff0c846573b71',
+    'SECRET_TOKEN': os.environ.get('OPBEAT_SECRET_TOKEN'),
 }

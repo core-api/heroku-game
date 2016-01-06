@@ -9,7 +9,7 @@ def get_homepage():
         url='/',
         title='Home',
         content={
-            'new_game': Link(trans='create')
+            'new_game': Link(action='post')
         }
     )
 
@@ -21,8 +21,8 @@ def get_game(instance):
     content = {
         'description': instance.get_description(),
         'board': instance.get_board_string(),
-        'play': Link(trans='update', fields=['position']),
-        'new_game': Link(url='/', trans='create')
+        'play': Link(action='put', fields=['position']),
+        'new_game': Link(url='/', action='post')
     }
     if instance.is_finished():
         del content['play']
