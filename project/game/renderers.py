@@ -1,12 +1,12 @@
 from rest_framework.renderers import BaseRenderer
-from coreapi.codecs import HTMLCodec, JSONCodec
+from coreapi.codecs import HTMLCodec, CoreJSONCodec
 
 
 class CoreAPIJSONRenderer(BaseRenderer):
-    media_type = 'application/json'
+    media_type = 'application/vnd.coreapi+json'
 
     def render(self, data, media_type=None, renderer_context=None):
-        codec = JSONCodec()
+        codec = CoreJSONCodec()
         return codec.dump(data, indent=True)
 
 

@@ -1,4 +1,4 @@
-coreapi==0.6.2
+coreapi==1.1.0
 dj-database-url==0.3.0
 dj-static==0.0.6
 Django==1.9.0

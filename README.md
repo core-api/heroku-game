@@ -1,6 +1,6 @@
-# Core API game
+# Example 'game' service
 
-http://coreapi-game.herokuapp.com
+http://game.coreapi.org/
 
 This is the repository for an example [Core API][core-api] service.
 
