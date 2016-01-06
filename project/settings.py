@@ -12,10 +12,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
-
 SECRET_KEY = os.environ.get('SECRET_KEY', '1234567890')
 
 DEBUG = os.environ.get('DEBUG', 'true').lower() == 'true'
