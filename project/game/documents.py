@@ -1,4 +1,4 @@
-from coreapi import Document, Link, required
+from coreapi import Document, Link, Field
 
 
 def get_homepage():
@@ -21,7 +21,7 @@ def get_game(instance):
     content = {
         'description': instance.get_description(),
         'board': instance.get_board_string(),
-        'play': Link(action='put', fields=['position']),
+        'play': Link(action='put', fields=[Field('position', required=True)]),
         'new_game': Link(url='/', action='post')
     }
     if instance.is_finished():
