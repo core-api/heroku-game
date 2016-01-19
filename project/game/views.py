@@ -22,7 +22,10 @@ def game_detail(request, pk):
     try:
         instance = Game.objects.get(pk=pk)
     except Game.DoesNotExist:
-        error = Error(['Game not found.'])
+        error = Error(
+            title='Not found',
+            content={"messages": ['No game found.']}
+        )
         return Response(error, status=404)
 
     if request.method == 'PUT':
