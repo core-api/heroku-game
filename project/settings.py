@@ -77,8 +77,9 @@ STATICFILES_DIRS = (
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
-        'project.game.renderers.CoreAPIJSONRenderer',
-        'project.game.renderers.CoreAPIHTMLRenderer'
+        'project.game.renderers.CoreJSONRenderer',
+        'project.game.renderers.HALRenderer',
+        'project.game.renderers.HTMLRenderer'
     ],
     'EXCEPTION_HANDLER': 'project.game.exceptions.custom_exception_handler',
     'UNAUTHENTICATED_USER': None
